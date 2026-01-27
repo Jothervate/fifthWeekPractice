@@ -1,0 +1,25 @@
+@import "bootstrap/scss/functions";
+@import "./variables";
+@import "bootstrap/scss/bootstrap";
+
+
+
+
+
+/* 隱藏按鈕之間重疊的邊框線 */
+
+.btn-group-pill{
+    gap: 8px;
+};
+
+/* 自定義類名，避免影響到全站的其他按鈕群組 */
+.custom-border-group .btn {
+  border-radius: 5px !important; /* 強制覆蓋 Bootstrap 預設值 */
+  margin-left: 5px !important;    /* 取消 Bootstrap 的負邊距重疊 */
+  margin-right: 5px;           /* 可選：增加按鈕間距，若不需要間距可設為 0 */
+}
+
+/* 處理最後一個按鈕的間距 */
+.custom-border-group .btn:last-child {
+    margin-right: 0;
+}
