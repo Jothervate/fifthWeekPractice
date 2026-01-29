@@ -142,7 +142,7 @@ function App() {
         try {
           await axios.post(`${API_BASE}/api/user/check`);
           setIsAuth(true);
-          getDatas(); // 驗證成功，直接抓資料
+          
 
           // 只有當「尚未執行過初始跳轉」時，才執行 navigate('/')
           if (hasInitialRedirected.current === false) {
@@ -156,7 +156,7 @@ function App() {
         }
       };
       checkAuth();
-  }, [getDatas,navigate]); // 僅在頁面載入時執行
+  }, [navigate]); // 僅在頁面載入時執行
 
 
   
@@ -447,7 +447,7 @@ return (
           formData={formData}
           setFormData={setFormData}
           setIsAuth={setIsAuth}
-          getDatas={getDatas}
+          
         />
       ) : (
 

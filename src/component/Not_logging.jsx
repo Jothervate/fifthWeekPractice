@@ -3,7 +3,7 @@ import axios from "axios";
 import { API_BASE } from "../Constants/config";
 import {  useNavigate } from "react-router-dom";
 
-const Not_logging = ({ formData, setIsAuth, setFormData, getDatas }) => {
+const Not_logging = ({ formData, setIsAuth, setFormData }) => {
     const navigate= useNavigate() //初始化navigate樣式
 
     // 1. 處理輸入框變動
@@ -32,9 +32,6 @@ const Not_logging = ({ formData, setIsAuth, setFormData, getDatas }) => {
             
             // 變更狀態為已登入 (父元件會切換顯示內容)
             setIsAuth(true);
-            
-            // 登入成功後，立刻叫父元件去抓產品資料
-            getDatas();
 
             //並且,登入成功後,預設會先進入首頁
             navigate('/');
